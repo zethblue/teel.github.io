@@ -6,13 +6,19 @@
   overflow: hidden;
 }
 
+body {
+  background: transparent !important;
+  position: relative;
+  z-index: 0;
+}
+
 /* === STERNENSCHICHTEN === */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-   z-index: -1 !important;
+  z-index: -1 !important;
   background-image:
     /* kleine Sterne */
     radial-gradient(1px 1px at 5% 10%, #fff 55%, transparent 56%),
