@@ -1,4 +1,3 @@
-
 #teel-bio {
   position: relative;
   overflow: hidden;
@@ -11,6 +10,7 @@
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
+/* Text-Styles */
 #teel-bio .intro {
   color: #d8c9ff;
   font-style: italic;
@@ -40,7 +40,6 @@
 }
 #teel-bio .smm2 { color: #d8c9ff; }
 
-/* Chess-Icon Link + Pulse */
 #teel-bio .chess-link {
   color: #d8c9ff;
   text-decoration: none;
@@ -92,5 +91,5 @@
   opacity: .16;
 }
 
-/* Content über die Sterne legen */
+/* Content über Sterne */
 #teel-bio > * { position: relative; z-index: 1; }
