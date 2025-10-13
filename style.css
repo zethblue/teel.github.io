@@ -1,95 +1,10 @@
-#teel-bio {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  padding: 60px 30px;
-  text-align: center;
-  font-family: "Georgia", serif;
-  line-height: 1.8;
-  color: #c5a3ff;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+#user-profile-bio {
+  background: linear-gradient(135deg,#120620,#2d1048);
+  color: #fff !important;
+  border: 4px solid #ff00ff;
+  padding: 20px;
 }
 
-/* Text-Styles */
-#teel-bio .intro {
-  color: #d8c9ff;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 1.8em;
-  margin: 0 0 .2em 0;
-  text-shadow: 0 0 10px #a97eff;
+#user-profile-bio h2 {
+  color: #ffbfff !important;
 }
-#teel-bio .sub {
-  color: #c5a3ff;
-  font-style: italic;
-  font-weight: normal;
-  margin: 0 0 .6em 0;
-}
-#teel-bio .focus {
-  color: #e2d0ff;
-  font-style: italic;
-  font-size: 1.1em;
-  margin: 0 0 1.5em 0;
-}
-#teel-bio .note {
-  font-style: normal;
-  color: #a78bfa;
-  font-size: .9em;
-  opacity: .9;
-  margin-top: 1.5em;
-}
-#teel-bio .smm2 { color: #d8c9ff; }
-
-#teel-bio .chess-link {
-  color: #d8c9ff;
-  text-decoration: none;
-  display: inline-block;
-  transition: .4s;
-  animation: teel-pulse 4s infinite ease-in-out;
-}
-#teel-bio .chess-link:hover {
-  color: #fff;
-  text-shadow: 0 0 12px #c3aaff;
-  animation: teel-hoverPulse 1.5s infinite ease-in-out;
-}
-@keyframes teel-pulse {
-  0%, 100% { text-shadow: 0 0 6px #a97eff, 0 0 10px #8b73ff; opacity: .9; }
-  50%      { text-shadow: 0 0 14px #cbb7ff, 0 0 20px #b398ff; opacity: 1; }
-}
-@keyframes teel-hoverPulse {
-  0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #b398ff; }
-  50%      { text-shadow: 0 0 18px #fff, 0 0 28px #c8b5ff; }
-}
-
-/* Sterne – rein mit CSS, sanftes Twinkle + Drift */
-@keyframes teel-twinkle {
-  0%, 100% { opacity: .2; transform: scale(1); }
-  50%      { opacity: .8; transform: scale(1.25); }
-}
-@keyframes teel-drift {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-100px); }
-}
-
-#teel-bio::before,
-#teel-bio::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(2px 2px at 20% 30%, #ffffff 50%, transparent 51%),
-    radial-gradient(2px 2px at 80% 70%, #ffffff 50%, transparent 51%),
-    radial-gradient(1px 1px at 50% 10%, #ffffff 50%, transparent 51%),
-    radial-gradient(1.4px 1.4px at 60% 50%, #ffffff 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 30% 80%, #ffffff 50%, transparent 51%);
-  opacity: .12;
-  z-index: 0;
-  animation: teel-twinkle 5s infinite ease-in-out, teel-drift 40s linear infinite;
-}
-#teel-bio::after {
-  animation-delay: 2s;
-  opacity: .16;
-}
-
-/* Content über Sterne */
-#teel-bio > * { position: relative; z-index: 1; }
