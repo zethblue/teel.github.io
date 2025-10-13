@@ -2,13 +2,8 @@
 .container {
   max-width: none !important;
   position: relative;
-  background: radial-gradient(ellipse at bottom, #0a0116 0%, #020007 100%);
-  overflow: hidden;
-}
-
-body {
-  background: transparent !important;
-  position: relative;
+  background: none !important;
+  overflow: visible !important;
   z-index: 0;
 }
 
@@ -45,6 +40,12 @@ body::before {
   background-repeat: repeat;
   animation: twinkle 6s ease-in-out infinite alternate, drift 180s linear infinite;
   opacity: 0.35;
+}
+
+body {
+  background: transparent !important;
+  position: relative;
+  z-index: 0;
 }
 
 /* === LEUCHTENDE BLITZE === */
