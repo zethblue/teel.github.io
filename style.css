@@ -1,98 +1,96 @@
-.profile-about {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  padding: 60px 30px;
-  border-radius: 10px;
-  text-align: center;
-  font-family: 'Georgia', serif;
-  line-height: 1.8;
+
+#teel-bio {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  padding: 60px 30px;
+  text-align: center;
+  font-family: "Georgia", serif;
+  line-height: 1.8;
   color: #c5a3ff;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-.profile-about h2.intro {
+#teel-bio .intro {
   color: #d8c9ff;
   font-style: italic;
   font-weight: normal;
-  text-shadow: 0 0 10px #a97eff;
   font-size: 1.8em;
-  margin-bottom: 0.2em;
+  margin: 0 0 .2em 0;
+  text-shadow: 0 0 10px #a97eff;
 }
-
-.profile-about h3.sub {
+#teel-bio .sub {
   color: #c5a3ff;
   font-style: italic;
   font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 0.6em;
+  margin: 0 0 .6em 0;
 }
-
-.profile-about p.focus {
+#teel-bio .focus {
   color: #e2d0ff;
   font-style: italic;
   font-size: 1.1em;
-  margin-bottom: 1.5em;
+  margin: 0 0 1.5em 0;
 }
-
-.profile-about p.note {
+#teel-bio .note {
   font-style: normal;
   color: #a78bfa;
-  font-size: 0.9em;
-  opacity: 0.85;
+  font-size: .9em;
+  opacity: .9;
   margin-top: 1.5em;
 }
+#teel-bio .smm2 { color: #d8c9ff; }
 
-.profile-about .smm2 {
-  color: #d8c9ff;
-}
-
-.profile-about a.chess-link {
+/* Chess-Icon Link + Pulse */
+#teel-bio .chess-link {
   color: #d8c9ff;
   text-decoration: none;
   display: inline-block;
-  transition: 0.4s;
-  animation: pulse 4s infinite ease-in-out;
+  transition: .4s;
+  animation: teel-pulse 4s infinite ease-in-out;
 }
-.profile-about a.chess-link:hover {
-  color: #ffffff;
+#teel-bio .chess-link:hover {
+  color: #fff;
   text-shadow: 0 0 12px #c3aaff;
-  animation: hoverPulse 1.5s infinite ease-in-out;
+  animation: teel-hoverPulse 1.5s infinite ease-in-out;
 }
-
-@keyframes pulse {
-  0%, 100% { text-shadow: 0 0 6px #a97eff, 0 0 10px #8b73ff; opacity: 0.9; }
-  50% { text-shadow: 0 0 14px #cbb7ff, 0 0 20px #b398ff; opacity: 1; }
+@keyframes teel-pulse {
+  0%, 100% { text-shadow: 0 0 6px #a97eff, 0 0 10px #8b73ff; opacity: .9; }
+  50%      { text-shadow: 0 0 14px #cbb7ff, 0 0 20px #b398ff; opacity: 1; }
 }
-@keyframes hoverPulse {
+@keyframes teel-hoverPulse {
   0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #b398ff; }
-  50% { text-shadow: 0 0 18px #fff, 0 0 28px #c8b5ff; }
+  50%      { text-shadow: 0 0 18px #fff, 0 0 28px #c8b5ff; }
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.3); }
+/* Sterne – rein mit CSS, sanftes Twinkle + Drift */
+@keyframes teel-twinkle {
+  0%, 100% { opacity: .2; transform: scale(1); }
+  50%      { opacity: .8; transform: scale(1.25); }
 }
-@keyframes drift {
+@keyframes teel-drift {
   from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
+  to   { transform: translateY(-100px); }
 }
 
-.profile-about::before,
-.profile-about::after {
+#teel-bio::before,
+#teel-bio::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 100%),
-              radial-gradient(2px 2px at 80% 70%, #fff 50%, transparent 100%),
-              radial-gradient(1px 1px at 50% 10%, #fff 50%, transparent 100%),
-              radial-gradient(1.5px 1.5px at 60% 50%, #fff 50%, transparent 100%),
-              radial-gradient(1.2px 1.2px at 30% 80%, #fff 50%, transparent 100%);
-  opacity: 0.1;
-  animation: twinkle 5s infinite ease-in-out, drift 40s linear infinite;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 80% 70%, #ffffff 50%, transparent 51%),
+    radial-gradient(1px 1px at 50% 10%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 60% 50%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 30% 80%, #ffffff 50%, transparent 51%);
+  opacity: .12;
   z-index: 0;
+  animation: teel-twinkle 5s infinite ease-in-out, teel-drift 40s linear infinite;
 }
-.profile-about::after {
+#teel-bio::after {
   animation-delay: 2s;
-  opacity: 0.15;
+  opacity: .16;
 }
+
+/* Content über die Sterne legen */
+#teel-bio > * { position: relative; z-index: 1; }
