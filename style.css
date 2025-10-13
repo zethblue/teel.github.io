@@ -1,4 +1,4 @@
-/* --- Basis: sehr dunkler Himmel --- */
+/* --- DUNKLER BASISHIMMEL --- */
 .container {
   max-width: none !important;
   position: relative;
@@ -6,88 +6,76 @@
   overflow: hidden;
 }
 
-/* ========== STERNENFELD – DREI DICHTE EBENEN ========== */
-
-/* Ebene 1: viele kleine Sterne (flächig) */
+/* === STERNENFELD === */
 body::before {
   content: "";
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
   background-image:
-    radial-gradient(1.5px 1.5px at 8%   12%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 22%  38%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 41%  19%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 63%  77%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 79%  25%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 91%  61%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 35%  88%, #fff 55%, transparent 56%),
-    radial-gradient(1.5px 1.5px at 12%  72%, #fff 55%, transparent 56%);
+    /* kleine, dichte Sterne */
+    radial-gradient(1px 1px at 5% 10%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 15% 20%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 25% 35%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 35% 15%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 45% 55%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 55% 75%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 65% 25%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 75% 45%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 85% 65%, #fff 55%, transparent 56%),
+    radial-gradient(1px 1px at 95% 85%, #fff 55%, transparent 56%),
+    /* mittelgroße Sterne */
+    radial-gradient(2px 2px at 12% 80%, #fff 60%, transparent 61%),
+    radial-gradient(2px 2px at 30% 60%, #fff 60%, transparent 61%),
+    radial-gradient(2px 2px at 70% 30%, #fff 60%, transparent 61%),
+    radial-gradient(2px 2px at 80% 70%, #fff 60%, transparent 61%),
+    radial-gradient(2px 2px at 60% 90%, #fff 60%, transparent 61%),
+    /* große Sterne mit Glow */
+    radial-gradient(10px 10px at 20% 30%, rgba(200,170,255,0.3) 0%, transparent 60%),
+    radial-gradient(12px 12px at 40% 70%, rgba(200,170,255,0.25) 0%, transparent 65%),
+    radial-gradient(14px 14px at 80% 40%, rgba(200,170,255,0.25) 0%, transparent 65%),
+    radial-gradient(10px 10px at 60% 80%, rgba(200,170,255,0.25) 0%, transparent 65%);
   background-repeat: repeat;
-  opacity: 0.28;
-  animation: twinkleA 6s ease-in-out infinite alternate, driftA 120s linear infinite;
-}
-
-/* Ebene 2: mittelgroße Sterne (mehr Präsenz) */
-body::after {
-  content: "";
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image:
-    radial-gradient(2.2px 2.2px at 15% 60%, #fff 55%, transparent 56%),
-    radial-gradient(2.0px 2.0px at 45% 25%, #fff 55%, transparent 56%),
-    radial-gradient(2.4px 2.4px at 75% 15%, #fff 55%, transparent 56%),
-    radial-gradient(2.0px 2.0px at 85% 70%, #fff 55%, transparent 56%),
-    radial-gradient(2.2px 2.2px at 55% 95%, #fff 55%, transparent 56%),
-    radial-gradient(2.4px 2.4px at 95% 45%, #fff 55%, transparent 56%);
-  background-repeat: repeat;
-  opacity: 0.22;
-  animation: twinkleB 7.5s ease-in-out infinite alternate-reverse, driftB 160s linear infinite;
-}
-
-/* Ebene 3: größere Sterne mit sanftem Violett-Glow */
-.container::before {
-  content: "";
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image:
-    radial-gradient(9px 9px at 20% 30%, rgba(200,170,255,0.28) 0%, rgba(200,170,255,0.05) 60%, transparent 61%),
-    radial-gradient(12px 12px at 70% 40%, rgba(200,170,255,0.25) 0%, rgba(200,170,255,0.05) 60%, transparent 61%),
-    radial-gradient(10px 10px at 40% 75%, rgba(200,170,255,0.26) 0%, rgba(200,170,255,0.05) 60%, transparent 61%),
-    radial-gradient(8px 8px   at 85% 65%, rgba(200,170,255,0.24) 0%, rgba(200,170,255,0.05) 60%, transparent 61%);
-  background-repeat: no-repeat;
-  animation: pulseGlow 4.8s ease-in-out infinite alternate;
-  opacity: 0.22;
-}
-
-/* ========== LICHTBLITZE (kurze Glints) ========== */
-/* seltene, weiche Aufblitzer an wechselnden Positionen */
-.container::after {
-  content: "";
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background:
-    radial-gradient(60px 60px at 32% 18%, rgba(255,255,255,0.12) 0%, transparent 60%),
-    radial-gradient(80px 80px at 66% 68%, rgba(255,255,255,0.10) 0%, transparent 65%),
-    radial-gradient(70px 70px at 12% 72%, rgba(255,255,255,0.08) 0%, transparent 60%);
-  mix-blend-mode: screen;
-  animation: glint 9s ease-in-out infinite;
+  animation: twinkle 5s ease-in-out infinite alternate, drift 180s linear infinite;
   opacity: 0.35;
 }
 
-/* ========== ANIMATIONEN ========== */
-@keyframes twinkleA { 0%,100% {opacity: .20; transform: scale(1)} 50% {opacity: .45; transform: scale(1.06)} }
-@keyframes twinkleB { 0%,100% {opacity: .18; transform: scale(1)} 50% {opacity: .40; transform: scale(1.05)} }
-@keyframes driftA   { from { transform: translateY(0) } to { transform: translateY(-160px) } }
-@keyframes driftB   { from { transform: translateY(0) } to { transform: translateY(-220px) } }
-@keyframes pulseGlow{ 0% {opacity:.16} 50% {opacity:.3; transform: scale(1.03)} 100% {opacity:.2} }
-/* Glints wandern minimal in Position/Intensität */
-@keyframes glint {
-  0%   { opacity:.18; filter: blur(0.5px); }
-  35%  { opacity:.38; filter: blur(0.0px); transform: translate3d(2px, -2px, 0) }
-  70%  { opacity:.14; filter: blur(0.8px); transform: translate3d(-2px, 1px, 0) }
-  100% { opacity:.18; filter: blur(0.5px); }
+/* --- FUNKELNDE BLITZE (weiche Leuchtwellen) --- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(80px 80px at 25% 25%, rgba(255,255,255,0.12) 0%, transparent 70%),
+    radial-gradient(100px 100px at 70% 65%, rgba(255,255,255,0.10) 0%, transparent 70%),
+    radial-gradient(120px 120px at 40% 85%, rgba(255,255,255,0.08) 0%, transparent 70%);
+  animation: flash 10s ease-in-out infinite alternate;
+  opacity: 0.25;
+  mix-blend-mode: screen;
 }
 
-/* Inhalte transparent lassen, damit Sterne überall sichtbar sind */
+/* --- ANIMATIONEN --- */
+@keyframes twinkle {
+  0%,100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+@keyframes flash {
+  0%,100% { opacity: 0.2; filter: blur(0.5px); }
+  50% { opacity: 0.35; filter: blur(1px); }
+}
+
+/* Transparente OGS-Container */
 .main, .page, .content, .OGS-outer, .OGS-inner, .player-page {
   background: transparent !important;
 }
+
 
 
 /* Ranking Linie uebertoenen */
