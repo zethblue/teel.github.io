@@ -50,12 +50,12 @@
   background: transparent !important;
 }
 
-//Ranking Linie uebertoenen
+/* Ranking Linie uebertoenen */
 body.light .RatingsChart .deviation-area {
   fill: rgba(160, 120, 255, 0.25) !important;
 }
 
-//Spielhistorie
+/* Spielhistorie */
 body.light .Card,
 body.light .Modal {
   background-color: rgba(35, 20, 60, 0.8) !important;  /* dunkles Päisch mit leichter Transparenz */
