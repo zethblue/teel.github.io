@@ -71,6 +71,8 @@ body::after {
   left: 0;
   width: 2px;
   height: 120px;
+  opacity: 0; /* Meteor startet unsichtbar */
+  animation-fill-mode: both; /* wendet erste Keyframe-Opacity direkt an */
   /* rötlich → warmes Magenta/Crimson mit Glow-Verlauf */
   background: linear-gradient(18deg,
       rgba(255, 200, 210, 0.95) 0%,
