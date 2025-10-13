@@ -12,7 +12,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+   z-index: -1 !important;
   background-image:
     /* kleine Sterne */
     radial-gradient(1px 1px at 5% 10%, #fff 55%, transparent 56%),
@@ -57,33 +57,12 @@ body::after {
   mix-blend-mode: screen;
 }
 
-/* === METEOREN / SCHWEIFLICHTER === */
+/* === METEOREN / RÖTLICHE SCHWEIFLICHTER – weniger schräg === */
 @keyframes meteor {
-  0% {
-    transform: translate3d(100vw, -10vh, 0) rotate(45deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate3d(-20vw, 100vh, 0) rotate(45deg);
-    opacity: 0;
-  }
-}
-/* === METEOREN / GLÜHENDE SCHWEIFLICHTER === */
-@keyframes meteor {
-  0% {
-    transform: translate3d(100vw, -10vh, 0) rotate(45deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(-20vw, 100vh, 0) rotate(45deg);
-    opacity: 0;
-  }
+  /* Start etwas rechts oben → fast vertikal nach unten */
+  0%   { transform: translate3d(60vw, -12vh, 0) rotate(18deg); opacity: 0; }
+  8%   { opacity: 1; }
+  100% { transform: translate3d(56vw, 110vh, 0) rotate(18deg); opacity: 0; }
 }
 
 .meteor {
@@ -91,36 +70,37 @@ body::after {
   top: -10vh;
   left: 0;
   width: 2px;
-  height: 100px;
-  background: linear-gradient(45deg,
-      rgba(255, 220, 255, 0.9) 0%,
-      rgba(200, 150, 255, 0.8) 25%,
-      rgba(160, 80, 255, 0.4) 50%,
-      rgba(100, 40, 255, 0) 100%);
+  height: 120px;
+  /* rötlich → warmes Magenta/Crimson mit Glow-Verlauf */
+  background: linear-gradient(18deg,
+      rgba(255, 200, 210, 0.95) 0%,
+      rgba(255, 120, 160, 0.85) 30%,
+      rgba(220, 60, 140, 0.50) 60%,
+      rgba(160, 30, 120, 0.00) 100%);
   border-radius: 50%;
-  filter: blur(1px) drop-shadow(0 0 6px rgba(200,150,255,0.6));
+  filter: blur(0.7px) drop-shadow(0 0 8px rgba(255,120,160,0.60))
+                     drop-shadow(0 0 14px rgba(220,60,140,0.35));
   animation: meteor 18s linear infinite;
-  opacity: 0.85;
+  opacity: 0.9;
   z-index: 2;
 }
 
-/* Zusätzlicher Glow-Halo um den Schweif */
 .meteor::after {
   content: "";
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   top: -3px;
   left: -2px;
-  background: radial-gradient(circle, rgba(240,200,255,0.9) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,210,220,0.95) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(3px);
 }
 
-/* Drei Meteore mit versetztem Timing */
-.meteor:nth-child(1) { animation-delay: 3s; left: 20%; height: 130px; }
-.meteor:nth-child(2) { animation-delay: 9s; left: 60%; height: 150px; }
-.meteor:nth-child(3) { animation-delay: 16s; left: 80%; height: 120px; }
+/* drei Schweife mit leicht versetzten Spuren & Zeiten */
+.meteor:nth-child(1) { animation-delay: 3s;  left: 18%; height: 130px; }
+.meteor:nth-child(2) { animation-delay: 11s; left: 42%; height: 150px; }
+.meteor:nth-child(3) { animation-delay: 19s; left: 67%; height: 140px; }
 
 /* === ANIMATIONEN === */
 @keyframes twinkle {
@@ -139,6 +119,8 @@ body::after {
 /* Transparente OGS-Container */
 .main, .page, .content, .OGS-outer, .OGS-inner, .player-page {
   background: transparent !important;
+  position: relative;
+  z-index: 1;
 }
 
 
