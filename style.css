@@ -1,10 +1,4 @@
-#user-profile-bio {
-  background: linear-gradient(135deg,#120620,#2d1048);
-  color: #fff !important;
-  border: 4px solid #ff00ff;
-  padding: 20px;
-}
-
-#user-profile-bio h2 {
-  color: #ffbfff !important;
+/* Sichtbarkeits-Test */
+.container {
+  outline: 5px solid magenta !important; /* nur zum Prüfen, danach löschen */
 }
