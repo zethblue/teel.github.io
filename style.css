@@ -54,3 +54,13 @@
 body.light .RatingsChart .deviation-area {
   fill: rgba(160, 120, 255, 0.25) !important;
 }
+
+//Spielhistorie
+body.light .Card,
+body.light .Modal {
+  background-color: rgba(35, 20, 60, 0.8) !important;  /* dunkles Päisch mit leichter Transparenz */
+  border-color: rgba(160, 120, 255, 0.25) !important;   /* lila Glanzrand */
+  color: #e8dcff !important;                            /* gut lesbare Schrift */
+  box-shadow: 0 0 25px rgba(150, 100, 255, 0.15);
+  backdrop-filter: blur(6px);                            /* leichter Glas-Effekt */
+}
