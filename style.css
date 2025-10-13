@@ -178,6 +178,12 @@ body.light .RatingsChart .area {
   fill: rgba(150, 120, 255, 0.18) !important;  /* weiches, violett-transparentes Feld */
 }
 
+/*das hellgruene im RankingChart abschwächen */
+body.light .RatingsChart .weak-wins {
+  fill: #6fc467 !important;  /* leicht dunkler, natürlicher Ton */
+}
+
+
 /* Button try effects and colors */
 body.light button.sm,
 body.light .Button.sm {
