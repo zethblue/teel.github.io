@@ -1,116 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiet Battle</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'Georgia', serif;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #c5a3ff;
-    font-style: italic;
-    line-height: 1.8;
-    text-shadow: 0 0 10px #a97eff;
-  }
+.container {
+  max-width: none !important;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  /* Parallax stars */
-  .stars, .stars2, .stars3 {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: animStars 300s linear infinite;
-    box-shadow:
-      200px 400px white, 340px 600px white, 800px 900px white,
-      1200px 200px white, 1600px 700px white, 100px 1000px white,
-      1300px 400px white, 400px 1200px white, 900px 1400px white;
-  }
-  .stars2 {
-    width: 3px; height: 3px; opacity: 0.6;
-    animation: animStars 450s linear infinite;
-  }
-  .stars3 {
-    width: 1px; height: 1px; opacity: 0.4;
-    animation: animStars 600s linear infinite;
-  }
-  @keyframes animStars {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-2000px); }
-  }
+#user-profile-bio {
+  text-align: center;
+  padding: 40px;
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+}
 
-  p {
-    max-width: 600px;
-    z-index: 10;
-  }
-  p span {
-    color: #e2d0ff;
-  }
+#user-profile-bio h2.intro {
+  color: #d8c9ff;
+  font-style: italic;
+  font-weight: normal;
+  text-shadow: 0 0 10px #a97eff;
+  font-size: 1.8em;
+  margin-bottom: 0.2em;
+}
+#user-profile-bio h3.sub {
+  color: #c5a3ff;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+#user-profile-bio p.focus {
+  color: #e2d0ff;
+  font-style: italic;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
 
-  /* Footer / Notes section */
-  .footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.9em;
-    font-style: normal;
-    color: #a78bfa;
-    opacity: 0.85;
-  }
-  .footer a {
-    color: #d8c9ff;
-    text-decoration: none;
-    transition: 0.3s;
-  }
+#user-profile-bio p.note {
+  font-style: normal;
+  color: #a78bfa;
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-top: 1.5em;
+}
 
-  /* Chess icon pulse animation */
-  .chess-icon {
-    font-size: 1.1em;
-    display: inline-block;
-    animation: pulse 4s infinite ease-in-out;
-  }
-  @keyframes pulse {
-    0%, 100% { text-shadow: 0 0 6px #a97eff, 0 0 10px #8b73ff; opacity: 0.8; }
-    50% { text-shadow: 0 0 14px #cbb7ff, 0 0 20px #b398ff; opacity: 1; }
-  }
+#user-profile-bio a.chess-link {
+  color: #d8c9ff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.4s;
+  animation: pulse 4s infinite ease-in-out;
+}
+#user-profile-bio a.chess-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px #c3aaff;
+  animation: hoverPulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 6px #a97eff, 0 0 10px #8b73ff; opacity: 0.9; }
+  50% { text-shadow: 0 0 14px #cbb7ff, 0 0 20px #b398ff; opacity: 1; }
+}
+@keyframes hoverPulse {
+  0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #b398ff; }
+  50% { text-shadow: 0 0 18px #fff, 0 0 28px #c8b5ff; }
+}
 
-  .footer a:hover .chess-icon {
-    animation: hoverPulse 1s infinite ease-in-out;
-  }
-  @keyframes hoverPulse {
-    0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #b398ff; }
-    50% { text-shadow: 0 0 18px #fff, 0 0 28px #c8b5ff; }
-  }
+#user-profile-bio .smm2 {
+  color: #d8c9ff;
+}
 
-  .footer span {
-    color: #d8c9ff;
-  }
-</style>
-</head>
-<body>
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-
-  <p>
-    Stay a while.<br>
-    The world can wait.<br>
-    <span>Just a quiet battle of two wills.</span>
-  </p>
-
-  <div class="footer">
-    We can also chill over a 
-    <a href="https://www.chess.com/member/evil_little_dreams" target="_blank"><span class="chess-icon">♟️</span></a> board.<br>
-    Super Mario Maker 2: <span>Q84-LMP-NGF</span>
-  </div>
-</body>
-</html>
+#user-profile-bio::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("https://i.imgur.com/ebUe0Pp.png") repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
