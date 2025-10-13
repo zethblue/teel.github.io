@@ -49,3 +49,8 @@
 .main, .page, .content, .OGS-outer, .OGS-inner, .player-page {
   background: transparent !important;
 }
+
+//Ranking Linie uebertoenen
+body.light .RatingsChart .deviation-area {
+  fill: rgba(160, 120, 255, 0.25) !important;
+}
