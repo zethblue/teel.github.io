@@ -2153,7 +2153,7 @@ body.light #main-content#main-content a:hover {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
-/* Intro text styling */
+
 .profile-intro {
   font-style: italic;
   color: #fff8dc;
@@ -2170,5 +2170,41 @@ body.light #main-content#main-content a:hover {
   display: block;
   width: fit-content;     
   max-width: 90%;
+}
+
+.profile-chess {
+  display: block;
+  width: fit-content;
+  max-width: 90%;
+  margin: 18px auto 6px;
+  text-align: center;
+  font-size: 0.98em;          
+  line-height: 1.55;
+  color: lemonchiffon;
+  text-shadow: 0 0 2px rgba(255,255,200,.35);
+  padding: 10px 14px;
+  border-top: 1px solid rgba(200,180,255,.18);
+  border-bottom: 1px solid rgba(200,180,255,.18);
+}
+
+.profile-chess .pieces {
+  display: block;
+  font-size: 1.06em;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  opacity: .9;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,.35));
+}
+
+.profile-chess a {
+  color: #fffacd;              
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,250,205,.6);
+  padding-bottom: 1px;
+}
+.profile-chess a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(255,255,255,.4);
+  border-bottom-color: rgba(255,255,255,.8);
 }
 
