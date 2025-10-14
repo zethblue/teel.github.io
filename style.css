@@ -2170,3 +2170,15 @@ body.light #main-content#main-content a:hover {
   padding: 12px 0;
 }
 
+.profile-intro::after {
+  content: '✨';
+  display: block;
+  text-align: center;
+  opacity: 0.6;
+  animation: shimmer 4s ease-in-out infinite alternate;
+}
+@keyframes shimmer {
+  from { text-shadow: 0 0 4px #fff; opacity: 0.3; }
+  to   { text-shadow: 0 0 12px #fffacd; opacity: 0.9; }
+}
+
