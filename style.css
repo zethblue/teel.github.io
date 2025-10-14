@@ -2151,3 +2151,105 @@ body.light #main-content#main-content a:hover {
   color: #ffffff !important;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
+
+/* === Buttons: dunklerer Text === */
+body.light .btn-group .sm,
+body.light button.sm,
+body.light .Button.sm {
+    color: #e6d27a !important; /* dunkler als lemonchiffon */
+    text-shadow: 0 0 1px rgba(255, 255, 200, 0.25) !important; /* dezenter Glow */
+}
+
+    /* Hover/Active: Text bleibt lesbar, ohne aufzuhellen */
+    body.light .btn-group .sm:hover,
+    body.light button.sm:hover,
+    body.light .Button.sm:hover {
+        color: #ecd97f !important;
+        text-shadow: 0 0 2px rgba(255, 255, 200, 0.35) !important;
+    }
+
+    body.light .btn-group .sm:active,
+    body.light button.sm:active,
+    body.light .Button.sm:active {
+        color: #dbc86f !important;
+        text-shadow: 0 0 1px rgba(255, 255, 200, 0.2) !important;
+    }
+
+/* Falls Buttons als <a> gerendert werden (OGS macht das teils): */
+body.light .btn-group a.sm {
+    color: #e6d27a !important;
+}
+
+/* === Menüs: Dark Glass Look, gute Kontraste === */
+body.light header.NavBar .Menu,
+body.light header.NavBar .Dropdown,
+body.light header.NavBar .dropdown-menu,
+body.light .Menu,
+body.light .Dropdown,
+body.light .dropdown-menu,
+body.light .MenuList,
+body.light .PopupMenu,
+body.light .ContextMenu {
+    background-color: rgba(22, 14, 44, 0.96) !important;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(180, 140, 255, 0.25) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45), 0 0 18px rgba(160,120,255,0.15);
+    color: lemonchiffon !important;
+    z-index: 10000; /* sicher über dem Header */
+}
+
+    /* Menü-Items (verschiedene mögliche Klassennamen) */
+    body.light .MenuItem,
+    body.light .menu-item,
+    body.light .DropdownItem,
+    body.light .dropdown-item,
+    body.light .Menu li,
+    body.light .Menu a,
+    body.light .dropdown-menu a {
+        color: lemonchiffon !important;
+        text-shadow: 0 0 2px rgba(255, 255, 200, 0.35);
+    }
+
+        /* Hover/Focus States */
+        body.light .MenuItem:hover,
+        body.light .menu-item:hover,
+        body.light .DropdownItem:hover,
+        body.light .dropdown-item:hover,
+        body.light .Menu li:hover,
+        body.light .dropdown-menu a:hover {
+            background-color: rgba(90, 60, 150, 0.35) !important;
+            color: #fffbe1 !important;
+        }
+
+        /* Aktives/ausgewähltes Item */
+        body.light .MenuItem.active,
+        body.light .menu-item.active,
+        body.light .DropdownItem.active,
+        body.light .dropdown-item.active {
+            background-color: rgba(120, 80, 190, 0.35) !important;
+            color: #ffffff !important;
+            text-shadow: 0 0 3px rgba(255,255,255,0.4);
+        }
+
+    /* Trennlinien in Menüs */
+    body.light .Menu hr,
+    body.light .dropdown-divider,
+    body.light .Menu .divider {
+        border-color: rgba(180, 140, 255, 0.25) !important;
+        opacity: 0.7;
+    }
+
+    /* Icons/Pfeile in Menüs (Caret etc.) */
+    body.light .Menu .Icon,
+    body.light .Menu [class*="icon"],
+    body.light .dropdown-menu .Icon,
+    body.light .dropdown-menu [class*="icon"] {
+        color: #f5eebc !important; /* harmoniert mit lemonchiffon */
+    }
+
+    /* Links in Menüs */
+    body.light .Menu a,
+    body.light .dropdown-menu a {
+        text-decoration: none !important;
+    }
+
