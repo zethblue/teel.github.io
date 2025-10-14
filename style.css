@@ -2141,6 +2141,7 @@ body.light .User .ratings-grid .rating-entry.active {
 body.light #main-content#main-content,
 body.light #main-content#main-content *:not(svg):not(svg *):not(.Icon):not(.fa):not(.fa *):not([class*="icon"]):not([class*="Icon"]) {
   color: lemonchiffon !important;
+  background: black;
   text-shadow: 0 0 2px rgba(255, 255, 200, 0.35);
 }
 body.light #main-content#main-content a {
