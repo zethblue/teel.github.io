@@ -2153,3 +2153,20 @@ body.light #main-content#main-content a:hover {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
+/* Intro text styling */
+.profile-intro {
+  font-style: italic;
+  color: #fff8dc;
+  text-shadow: 0 0 6px rgba(255, 255, 200, 0.6),
+               0 0 12px rgba(180, 160, 255, 0.25);
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  display: inline-block;
+  margin: 20px auto;
+  text-align: center;
+  border-top: 1px solid rgba(200,180,255,0.2);
+  border-bottom: 1px solid rgba(200,180,255,0.2);
+  padding: 12px 0;
+}
+
