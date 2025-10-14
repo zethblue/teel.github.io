@@ -2162,23 +2162,13 @@ body.light #main-content#main-content a:hover {
   font-size: 1.1em;
   letter-spacing: 0.5px;
   line-height: 1.6;
-  display: inline-block;
-  margin: 20px auto;
   text-align: center;
   border-top: 1px solid rgba(200,180,255,0.2);
   border-bottom: 1px solid rgba(200,180,255,0.2);
   padding: 12px 0;
-}
-
-.profile-intro::after {
-  content: '✨';
+  margin: 20px auto;
   display: block;
-  text-align: center;
-  opacity: 0.6;
-  animation: shimmer 4s ease-in-out infinite alternate;
-}
-@keyframes shimmer {
-  from { text-shadow: 0 0 4px #fff; opacity: 0.3; }
-  to   { text-shadow: 0 0 12px #fffacd; opacity: 0.9; }
+  width: fit-content;     
+  max-width: 90%;
 }
 
