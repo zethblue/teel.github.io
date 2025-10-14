@@ -2216,9 +2216,6 @@ body.light #main-content#main-content a:hover {
   border-bottom-color: rgba(255,255,255,0.8);
 }
 
-.profile-chess {
-  padding-top: 14px;
-}
 .profile-mario strong {
   color: #f7e48d;
   text-shadow: 0 0 4px rgba(255,255,180,0.4);
