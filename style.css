@@ -2172,39 +2172,70 @@ body.light #main-content#main-content a:hover {
   max-width: 90%;
 }
 
-.profile-chess {
-  display: block;
-  width: fit-content;
-  max-width: 90%;
-  margin: 18px auto 6px;
-  text-align: center;
-  font-size: 0.98em;          
-  line-height: 1.55;
-  color: lemonchiffon;
-  text-shadow: 0 0 2px rgba(255,255,200,.35);
-  padding: 10px 14px;
-  border-top: 1px solid rgba(200,180,255,.18);
-  border-bottom: 1px solid rgba(200,180,255,.18);
+/* === container that holds all 3 === */
+.profile-sections {
+  display: flex;
+  justify-content: center;     /* zentriert die ganze Reihe */
+  align-items: flex-start;
+  gap: 28px;                   /* Abstand zwischen den Spalten */
+  flex-wrap: wrap;             /* falls Bildschirm schmal wird -> umbruch */
+  margin: 30px auto;
+  max-width: 960px;            /* verhindert, dass es zu breit wird */
 }
 
+.profile-block {
+  background: rgba(20, 10, 40, 0.4);
+  border: 1px solid rgba(200,180,255,0.18);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: center;
+  width: 240px;                /* fixe Breite pro Spalte */
+  color: lemonchiffon;
+  text-shadow: 0 0 2px rgba(255,255,200,0.35);
+  font-size: 0.95em;
+  line-height: 1.55;
+  box-shadow: 0 0 8px rgba(0,0,0,0.35);
+}
+
+/* === hover-effekt === */
+.profile-block:hover {
+  background: rgba(40, 25, 80, 0.6);
+  box-shadow: 0 0 12px rgba(180,160,255,0.3);
+  transition: 0.3s ease;
+}
+
+/* === Links === */
+.profile-block a {
+  color: #fffacd;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,250,205,0.6);
+}
+.profile-block a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(255,255,255,0.4);
+  border-bottom-color: rgba(255,255,255,0.8);
+}
+
+/* === Spezialteile pro Block === */
 .profile-chess .pieces {
   display: block;
-  font-size: 1.06em;
+  font-size: 1.1em;
   letter-spacing: 2px;
-  margin-bottom: 6px;
-  opacity: .9;
+  margin-bottom: 4px;
   filter: drop-shadow(0 0 3px rgba(255,255,255,.35));
 }
 
-.profile-chess a {
-  color: #fffacd;              
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(255,250,205,.6);
-  padding-bottom: 1px;
-}
-.profile-chess a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 3px rgba(255,255,255,.4);
-  border-bottom-color: rgba(255,255,255,.8);
+.profile-mario strong {
+  color: #f7e48d;
+  text-shadow: 0 0 4px rgba(255,255,180,0.4);
 }
 
+.profile-music em {
+  font-style: italic;
+  color: #dcdcff;
+}
+
+.profile-block .tiny {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
