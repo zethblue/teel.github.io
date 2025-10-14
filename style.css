@@ -1,26 +1,20 @@
-/* === BASISHIMMEL === */
+/* --- BASISHIMMEL --- */
 .container {
   max-width: none !important;
   position: relative;
-  background: radial-gradient(ellipse at bottom, #0a0116 0%, #020007 100%) !important;
+  background: radial-gradient(ellipse at bottom, #0a0116 0%, #020007 100%);
   overflow: hidden;
-  z-index: 0;
 }
 
-body {
-  background: transparent !important;
-  position: relative;
-  z-index: 0;
-}
-
-/* === STERNENSCHICHTEN (sichtbar & animiert) === */
+/* === STERNENSCHICHTEN === */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0 !important;
+   z-index: -1 !important;
   background-image:
+    /* kleine Sterne */
     radial-gradient(1px 1px at 5% 10%, #fff 55%, transparent 56%),
     radial-gradient(1px 1px at 15% 25%, #fff 55%, transparent 56%),
     radial-gradient(1px 1px at 25% 40%, #fff 55%, transparent 56%),
@@ -31,11 +25,13 @@ body::before {
     radial-gradient(1px 1px at 75% 80%, #fff 55%, transparent 56%),
     radial-gradient(1px 1px at 85% 35%, #fff 55%, transparent 56%),
     radial-gradient(1px 1px at 95% 65%, #fff 55%, transparent 56%),
+    /* mittlere Sterne */
     radial-gradient(2px 2px at 10% 85%, #fff 60%, transparent 61%),
     radial-gradient(2px 2px at 30% 60%, #fff 60%, transparent 61%),
     radial-gradient(2px 2px at 70% 30%, #fff 60%, transparent 61%),
     radial-gradient(2px 2px at 80% 75%, #fff 60%, transparent 61%),
     radial-gradient(2px 2px at 60% 90%, #fff 60%, transparent 61%),
+    /* große Sterne mit Glow */
     radial-gradient(8px 8px at 20% 25%, rgba(200,170,255,0.3) 0%, transparent 65%),
     radial-gradient(10px 10px at 50% 70%, rgba(200,170,255,0.25) 0%, transparent 65%),
     radial-gradient(12px 12px at 80% 40%, rgba(200,170,255,0.25) 0%, transparent 65%),
@@ -61,8 +57,9 @@ body::after {
   mix-blend-mode: screen;
 }
 
-/* === METEOREN (rötlich, vertikal) === */
+/* === METEOREN / RÖTLICHE SCHWEIFLICHTER – weniger schräg === */
 @keyframes meteor {
+  /* Start etwas rechts oben → fast vertikal nach unten */
   0%   { transform: translate3d(60vw, -12vh, 0) rotate(18deg); opacity: 0; }
   8%   { opacity: 1; }
   100% { transform: translate3d(56vw, 110vh, 0) rotate(18deg); opacity: 0; }
@@ -74,8 +71,9 @@ body::after {
   left: 0;
   width: 2px;
   height: 120px;
-  opacity: 0 !important; /* Start unsichtbar */
-  animation-fill-mode: both;
+  opacity: 0; /* Meteor startet unsichtbar */
+  animation-fill-mode: both; /* wendet erste Keyframe-Opacity direkt an */
+  /* rötlich → warmes Magenta/Crimson mit Glow-Verlauf */
   background: linear-gradient(18deg,
       rgba(255, 200, 210, 0.95) 0%,
       rgba(255, 120, 160, 0.85) 30%,
@@ -85,6 +83,7 @@ body::after {
   filter: blur(0.7px) drop-shadow(0 0 8px rgba(255,120,160,0.60))
                      drop-shadow(0 0 14px rgba(220,60,140,0.35));
   animation: meteor 18s linear infinite;
+  opacity: 0.9;
   z-index: 2;
 }
 
@@ -100,6 +99,7 @@ body::after {
   filter: blur(3px);
 }
 
+/* drei Schweife mit leicht versetzten Spuren & Zeiten */
 .meteor:nth-child(1) { animation-delay: 3s;  left: 18%; height: 130px; }
 .meteor:nth-child(2) { animation-delay: 11s; left: 42%; height: 150px; }
 .meteor:nth-child(3) { animation-delay: 19s; left: 67%; height: 140px; }
@@ -116,4 +116,82 @@ body::after {
 @keyframes flash {
   0%,100% { opacity: 0.2; filter: blur(0.5px); }
   50% { opacity: 0.4; filter: blur(1.2px); }
+}
+
+/* Transparente OGS-Container */
+.main, .page, .content, .OGS-outer, .OGS-inner, .player-page {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Ranking Linie uebertoenen */
+body.light .RatingsChart .deviation-area {
+  fill: rgba(160, 120, 255, 0.25) !important;
+}
+
+/* Spielhistorie */
+body.light .Card,
+body.light .Modal {
+  background-color: rgba(35, 20, 60, 0.8) !important;  /* dunkles Päisch mit leichter Transparenz */
+  border-color: rgba(160, 120, 255, 0.25) !important;   /* lila Glanzrand */
+  color: #e8dcff !important;                            /* gut lesbare Schrift */
+  box-shadow: 0 0 25px rgba(150, 100, 255, 0.15);
+  backdrop-filter: blur(6px);                            /* leichter Glas-Effekt */
+}
+
+/* OGS Header, sonst weiss */
+body.light header.NavBar {
+  background-color: rgba(25, 10, 45, 0.9) !important;   /* dunkles violett-bläulich */
+  border-bottom: 1px solid rgba(180, 140, 255, 0.25) !important;
+  box-shadow: 0 0 20px rgba(150, 100, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #e6d9ff !important;
+}
+
+/* Bewertung Ranking aktiv sonst zu grell */
+body.light .User .ratings-grid .rating-entry.active {
+  background-color: rgba(70, 40, 110, 0.55) !important;  /* sanftes, durchsichtiges Violett */
+  border: 1px solid rgba(160, 120, 255, 0.3) !important;  /* dezente Leuchtkante */
+  box-shadow: 0 0 8px rgba(160, 120, 255, 0.15);
+  color: #f0eaff !important;
+}
+
+body.light .RatingsChart .area {
+  fill: rgba(150, 120, 255, 0.18) !important;  /* weiches, violett-transparentes Feld */
+}
+
+/*das hellgruene im RankingChart abschwächen */
+body.light .RatingsChart .weak-wins {
+  fill: #6fc467 !important;  /* leicht dunkler, natürlicher Ton */
+}
+
+
+/* Button try effects and colors */
+body.light button.sm,
+body.light .Button.sm {
+  background-color: rgba(50, 30, 90, 0.7) !important;   /* dunkles Violett mit Transparenz */
+  color: #e6d9ff !important;                             /* helle Schrift */
+  border: 1px solid rgba(180, 140, 255, 0.25) !important;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(160, 120, 255, 0.15);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover-Effekt */
+body.light button.sm:hover,
+body.light .Button.sm:hover {
+  background-color: rgba(80, 50, 140, 0.85) !important;  /* etwas heller beim Hovern */
+  box-shadow: 0 0 10px rgba(180, 140, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Aktiver Klick-Effekt */
+body.light button.sm:active,
+body.light .Button.sm:active {
+  background-color: rgba(40, 20, 70, 0.8) !important;
+  transform: translateY(0);
+  box-shadow: 0 0 4px rgba(180, 140, 255, 0.15) inset;
 }
