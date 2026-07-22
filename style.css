@@ -2230,7 +2230,7 @@ body.light #main-content#main-content a:hover {
   opacity: 0.8;
 }
 
-//Light Theme fix
+/* Light Theme fix */
 #default-variant-container {
     --card-background-color: #2a2a2a !important;
     --chart-area: #2a2a2a !important;
