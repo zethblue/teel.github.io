@@ -1,5 +1,13 @@
 html, body { background: transparent !important; }
 
+.GameHistoryTable tbody tr:has(a[href="/game/88332119"]) {
+    display: none !important;
+}
+
+.GameHistoryTable tbody tr:has(a[href="/game/87943197"]) {
+    display: none !important;
+}
+
 .container {
   max-width: none !important;
   position: relative;
