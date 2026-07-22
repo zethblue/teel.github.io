@@ -2149,7 +2149,6 @@ body.light .User .ratings-grid .rating-entry.active {
 body.light #main-content#main-content,
 body.light #main-content#main-content *:not(svg):not(svg *):not(.Icon):not(.fa):not(.fa *):not([class*="icon"]):not([class*="Icon"]) {
   color: lemonchiffon !important;
-  background: black;
   text-shadow: 0 0 2px rgba(255, 255, 200, 0.35);
 }
 body.light #main-content#main-content a {
@@ -2239,3 +2238,60 @@ body.light #main-content#main-content a:hover {
   opacity: 0.8;
 }
 
+/* Game History */
+body.light .Card:has(.GameHistoryTable) {
+    background: rgba(25, 15, 45, 0.88) !important;
+    border: 1px solid rgba(180, 140, 255, 0.25) !important;
+    box-shadow: 0 0 25px rgba(140, 100, 255, 0.15) !important;
+    backdrop-filter: blur(6px);
+}
+
+body.light .GameHistoryTable,
+body.light .GameHistoryTable table,
+body.light .GameHistoryTable thead,
+body.light .GameHistoryTable tbody,
+body.light .GameHistoryTable tr,
+body.light .GameHistoryTable th,
+body.light .GameHistoryTable td {
+    background-color: transparent !important;
+    color: lemonchiffon !important;
+}
+
+body.light .GameHistoryTable thead,
+body.light .GameHistoryTable th {
+    background-color: rgba(15, 8, 35, 0.75) !important;
+}
+
+body.light .GameHistoryTable tbody tr:nth-child(even) {
+    background-color: rgba(100, 70, 150, 0.12) !important;
+}
+
+body.light .GameHistoryTable tbody tr:hover {
+    background-color: rgba(120, 85, 180, 0.28) !important;
+}
+
+/* Tooltips, Popovers und kleine Infofenster */
+body.light .Popover,
+body.light .popover,
+body.light .Tooltip,
+body.light .tooltip,
+body.light .PlayerCard,
+body.light .player-card,
+body.light [role="tooltip"] {
+    background: rgba(20, 10, 40, 0.94) !important;
+    color: lemonchiffon !important;
+    border: 1px solid rgba(180, 140, 255, 0.3) !important;
+    box-shadow: 0 0 20px rgba(140, 100, 255, 0.2) !important;
+}
+
+/* Innere Elemente dürfen nicht wieder weiß werden */
+body.light .Popover *,
+body.light .popover *,
+body.light .Tooltip *,
+body.light .tooltip *,
+body.light .PlayerCard *,
+body.light .player-card *,
+body.light [role="tooltip"] * {
+    background-color: transparent !important;
+    color: inherit !important;
+}
