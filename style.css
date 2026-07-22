@@ -2231,7 +2231,7 @@ body.light #main-content#main-content a:hover {
 }
 
 //Light Theme fix
-body.light #main-content#main-content {
+#default-variant-container {
     --card-background-color: #2a2a2a !important;
     --chart-area: #2a2a2a !important;
     --chart-line: #aaaaaa !important;
